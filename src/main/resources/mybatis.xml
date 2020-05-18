@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration
+        PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-config.dtd">
+<configuration>
+<!--运行环境配置-->
+    <environments default="development">
+        <environment id="development">
+            <!--事物管理器配置-->
+            <transactionManager type="JDBC"></transactionManager>
+            <dataSource type="POOLED">
+                <property name="driver" value="oracle.jdbc.driver.OracleDriver"/>
+                <property name="url" value="jdbc:oracle:thin:@localhost:1521:WY"/>
+                <property name="username" value="wy"/>
+                <property name="password" value="root"/>
+            </dataSource>
+        </environment>
+    </environments>
+    <mappers>
+        <!--加载映射文件-->
+        <mapper resource="mybatis/UserMapper.xml"/>
+    </mappers>
+</configuration>
